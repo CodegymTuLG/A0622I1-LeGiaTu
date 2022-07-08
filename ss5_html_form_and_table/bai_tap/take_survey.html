@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Market Research Survey</title>
+    <style>
+        .ptitle{
+            color:gray;
+        }
+        .survey_title{
+            font-weight: bold;
+        }
+        .dropdownbox{
+            padding-left: 50%;
+
+        }
+        .opt{
+
+        }
+        form{
+            margin: 1% 2%;
+        }
+        .q3box{
+            margin-left: 2%;
+        }
+        .q6lb1{
+            margin-left: 1%;
+        }
+        .q6lb2{
+            margin-left: 4.3%;
+        }
+        .textarea {
+            display: block;
+            width: 100%;
+            overflow: hidden;
+            resize: both;
+            min-height: 40px;
+            line-height: 20px;
+        }
+    </style>
+</head>
+<body>
+<form>
+<h2>Market Research Survey</h2>
+<p class="ptitle">Please take a few moments to complete this satisfaction survey.</p><br>
+<p class="survey_title">What is your age range?</p>
+    <select class="dropdownbox">
+        <option>18-24</option>
+        <option>25-34</option>
+        <option>35-50</option>
+        <option>50+</option>
+    </select>
+<p class="survey_title">What is your yearly income range?</p>
+    <select class="dropdownbox">
+        <option>$0 - $25,000</option>
+        <option>$25,001 - $50,000</option>
+        <option>$50,001 - $100,000</option>
+        <option>$100,000+</option>
+    </select>
+<p class="survey_title">Gender Identity</p>
+    <input type="radio" name="q3radio"/>Male<br>
+    <input type="radio" name="q3radio"/>Female<br>
+    <input type="radio" name="q3radio"/>Nonbinary<br>
+    <input type="radio" name="q3radio"/>Other<br>
+        <input class="q3box" type="text" size="30px">
+<p class="survey_title">Which of the following products have your purchased in the last 2 months. Please check all that apply.</p>
+    <input type="checkbox"/>Product 1<br>
+    <input type="checkbox"/>Product 2<br>
+    <input type="checkbox"/>Product 3<br>
+<p class="survey_title">How often would you use our new product?</p>
+    <input type="radio" name="q5radio"/>Daily<br>
+    <input type="radio" name="q5radio"/>Weekly<br>
+    <input type="radio" name="q5radio"/>Monthly<br>
+<p class="survey_title">What would you pay for the new product?</p>
+   <label>$</label>
+    <input type="text" size="10px"/>
+    <label> . </label>
+    <input type="text" size="2px"/><br>
+    <label class="q6lb1"> Dollars</label> <label class="q6lb2"> Cents</label>
+<p class="survey_title">What features would you like to see in the new product.</p>
+    <textarea class="textarea"></textarea>
+<p class="survey_title">Please rate your level of agreement with the following statements.</p>
+</form>
+</body>
+</html>

@@ -1,0 +1,51 @@
+.tite1{
+    text-align: center;
+    background-color: red;
+    color: white;
+    margin: 3px;
+}
+.tite2{
+    text-align: left;
+    background-color: aquamarine;
+    color: blue;
+    margin: 3px;
+}
+body{
+    margin: 10% 30%;
+}
+form{
+    border-style: double;
+    margin-bottom: 100px;
+}
+label{
+    margin-left: 20px;
+    color: blue;
+}
+.lbemail{
+    margin-left: 7%;
+}
+.lbcheckbox1{
+    margin-left: 2%;
+}
+.lbcheckbox2{
+    margin-left: 15.8%;
+}
+.btn{
+    margin-left: 15%;
+}
+.form2{
+    background-color: burlywood;
+}
+/*.lbcheckbox.lbcheckbox1.lbcheckbox2{*/
+/*    color: red;*/
+/*}*/
+.ipaddress{
+    margin-left: 2.4%;
+    padding: 20px;
+}
+.select_class{
+    margin-left: 6%;
+}
+.ipemail{
+    margin-left: 4%;
+}

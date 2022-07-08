@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hobbit form</title>
+    <link rel="stylesheet" href="css_create_form.css">
+</head>
+<body>
+    <form>
+
+        <div>
+        <h1 class="tite1">SỞ THÍCH CỦA BẠN</h1>
+        <p>
+            <label class="lbname">Họ và tên</label> <input class="ipname" type="text" name="fullname" /><br><br>
+            <label class="lbemail">Email </label> <input class="ipemail" type="text" name="email" /><br><br>
+            <label class="lbinfor">Sở Thích  </label>
+            <input class="lbcheckbox1" type="checkbox"> Thể Thao
+            <input class="lbcheckbox" type="checkbox"> Âm nhạc
+            <input class="lbcheckbox" type="checkbox"> Đọc Sách <br><br>
+            <input class="lbcheckbox2" type="checkbox"> Lướt web
+            <input class="lbcheckbox" type="checkbox"> Chơi game
+            <input class="lbcheckbox" type="checkbox"> Điện ảnh<br><br>
+            <input class="lbcheckbox2" type="checkbox"> Du lịch<br><br>
+            <input class="btn" type="submit" value="Gửi thông tin">
+            <input type="reset" value="Nhập lại">
+        </p>
+        </div>
+    </form>
+    <form>
+
+        <div>
+            <h1 class="tite2">ĐĂNG KÝ HỌC VIÊN</h1>
+            <p>
+                <label class="lb">Họ và tên</label> <input type="text" name="fullname" size="20" /><br><br>
+                <label class="lb">Ngày sinh</label> <input type="text" name="birthday" size="13"/><br><br>
+                <label class="lb">Giới tính</label>
+                    <input type="radio" name="sex">Nam
+                    <input type="radio" name="sex">Nữ<br><br>
+                <label class="lb">Địa chỉ</label> <input class="ipaddress" type="text" name="fullname" size="12"/><br><br>
+                <label class="lb">Lớp</label>
+                    <select class="select_class" >
+                        <option >--Chọn lớp--</option>
+                        <option >1</option>
+                        <option >2</option>
+                        <option >3</option>
+                        <option >4</option>
+                    </select><br><br>
+                <label class="lb">Email</label> <input class="ipemail"type="text" name="email" /><br><br>
+                <label class="lb">Điện thoại</label> <input type="text" name="phonenumber" /><br><br>
+                <input class="btn" type="button" value="Đăng ký">
+                <input type="reset" value="Nhập lại">
+            </p>
+        </div>
+    </form>
+</body>
+</html>
