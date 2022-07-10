@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>make a simple table</title>
+    <style>
+        .th1{
+            background-color: yellow;
+        }
+        .th2{
+            background-color: orange;
+        }
+        h2{
+            font-size: 20px;
+            font-weight: bold;
+            margin: 10% 30% 24px;
+        }
+        h5{
+            margin: 0 40% -10px 20%;
+        }
+        .title2{
+            color: blue;
+            margin: 10% 35% 24px;
+        }
+        .tb1{
+            width: 20%;
+            margin: 20px 30% 0;
+        }
+        .tb2{
+            width: 50%;
+            margin: 20px 18% 0;
+        }
+        .tleft{
+            text-align: start;
+            color: blue;
+        }
+        .tright{
+            text-align: end;
+            color: blue;
+        }
+        .weektext{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <table class="tb1" border="1">
+        <h2 class="title1" >THỜI KHÓA BIỂU LỚP T0908I</h2>
+        <tr class="th1">
+            <th>Thứ 3</th>
+            <th>Thứ 5</th>
+            <th>Thứ 7</th>
+        </tr>
+        <tr>
+            <td>CF - T1, L1</td>
+            <td>CF - T2, L2</td>
+            <td>CF - T3, L3</td>
+        </tr>
+        <tr>
+            <td>CF - T4, L4</td>
+            <td>CF - Written Test</td>
+            <td>C - T1, L1</td>
+        </tr>
+    </table>
+    <table class="tb2" border="1">
+        <h2 class="title2">THỜI KHÓA BIỂU</h2>
+        <h5 class="tleft">Lớp T0908I</h5>
+        <h5 class="tright">Thời gian học: 13h30 - 17h30</h5><br>
+        <h5 class="tleft">Giáo viên: KhoaNV</h5>
+        <h5 class="tright">Ngày học: thứ 3, 5 7</h5><br>
+        <h5 class="tleft">Phòng học</h5>
+        <tr class="th1">
+            <th colspan="3"> </th>
+            <th>Thứ 3</th>
+            <th>Thứ 5</th>
+            <th>Thứ 7</th>
+        </tr>
+        <tr class="th2">
+            <th>Tuần</th>
+            <th>Ngày bắt đầu</th>
+            <th>Ngày kết thúc</th>
+            <th colspan="3">Môn học</th>
+        </tr>
+        <tr>
+            <td class="weektext">01</td>
+            <td>CF - T1, L1</td>
+            <td>CF - T2, L2</td>
+            <td colspan="3">CF - T3, L3</td>
+        </tr>
+        <tr>
+            <td class="weektext">02</td>
+            <td>CF - T4, L4</td>
+            <td>CF - Written Test</td>
+            <td colspan="3">C - T1, L1</td>
+        </tr>
+        <tr>
+            <td class="weektext">03</td>
+            <td>...</td>
+            <td>...</td>
+            <td colspan="3">...</td>
+        </tr>
+    </table>
+</body>
+</html>
