@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tính tổng và điểm trung bình</title>
+</head>
+<body>
+<button type="button" onclick="showResult();">Click on me</button>
+</body>
+<script>
+    function showResult() {
+        let subjectPhysics;
+        let subjectChemistry;
+        let subjectBiology;
+        subjectPhysics = prompt("Nhập điểm Vật lý");
+        subjectChemistry = prompt("Nhập điểm Hóa");
+        subjectBiology = prompt("Nhập điểm Sinh học");
+        let avg3subjects = (parseInt(subjectPhysics) + parseInt(subjectChemistry) + parseInt(subjectBiology))/3;
+        let total3subjects = parseInt(subjectPhysics) + parseInt(subjectChemistry) + parseInt(subjectBiology);
+        alert("Trung bình cộng 3 môn là " + avg3subjects);
+        alert("Tổng điểm 3 môn là " + total3subjects);
+
+    }
+</script>
+</html>

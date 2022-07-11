@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button type="button" onclick="showResult();">Click on me</button>
+</body>
+<script>
+    function showResult() {
+        let bankinh;
+        bankinh = prompt("hãy nhập bán kính hình tròn(cm)");
+        let dientich = parseInt(bankinh)*Math.PI*Math.PI;
+        alert("hình tròn với bán kính bằng "+ bankinh + "cm thì có diện tích là " + dientich);
+    }
+</script>
+</html>
