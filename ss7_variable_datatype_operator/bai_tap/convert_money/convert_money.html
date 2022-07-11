@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .lb2{
+            margin-left: 120px;
+        }
+        .op2{
+            margin-left: 24px;
+        }
+        .btn{
+            margin-left: 10px;
+        }
+        label{
+            font-weight: bold;
+        }
+        p{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<form>
+<label>Amount</label>
+<label class="lb2">From Currency</label>
+<label>To Currency</label><br>
+<input type="text" id="amount">
+<select id="from">
+    <option>VietNam</option>
+    <option>USD</option>
+</select>
+<select  id="to" class="op2">
+    <option>VietNam</option>
+    <option>USD</option>
+</select>
+<button type="button" onclick="convertMoney();" class="btn">CONVERT</button><br>
+<p id="result">Result :</p>
+</form>
+</body>
+<script>
+    function convertMoney() {
+        let x = document.getElementById("amount");
+        let amount = x.value;
+        let a1 = document.getElementById("from");
+        let option1 = a1.options[a1.selectedIndex].text;
+        let a2 = document.getElementById("to");
+        let option2 = a2.options[a2.selectedIndex].text;
+        if(option1==="VietNam"&&option2==="VietNam"){
+            document.getElementById("result").innerHTML = "Result :" + parseInt(amount) + "VND";
+        }
+        else{
+            if(option1==="VietNam"&&option2==="USD")
+            document.getElementById("result").innerHTML = "Result :" + parseInt(amount)/23000 +"USD" ;
+        }
+        if(option1==="USD"&&option2==="USD"){
+            document.getElementById("result").innerHTML = "Result :" + parseInt(amount) + "USD";
+        }
+        else{
+            if(option1==="USD"&&option2==="VietNam")
+                document.getElementById("result").innerHTML = "Result :" + parseInt(amount)*23000 +"VND" ;
+        }
+    }
+</script>
+</html>
