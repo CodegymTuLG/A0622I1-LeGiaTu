@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="tb1">
+<input type="text" id="tb2"><br><br>
+<button type="button" id="add" onclick="addition();">Addition(+)</button>
+<button type="button" id="sub" onclick="subtraction();">Subtraction(-)</button>
+<button type="button" id="multi" onclick="multiplication();">Multiplication(X)</button>
+<button type="button" id="divi" onclick="division();">Division(/)</button><br><br>
+<label id="resultWrite">Result :</label>
+
+</body>
+<script>
+    function addition() {
+        let ib1 = document.getElementById("tb1")
+        let x = ib1.value
+        let ib2 = document.getElementById("tb2")
+        let y = ib2.value
+        let result = parseInt(x)+parseInt(y)
+        document.getElementById("resultWrite").innerHTML = "Result Addition :" + result
+    }
+    function subtraction() {
+        let ib1 = document.getElementById("tb1")
+        let x = ib1.value
+        let ib2 = document.getElementById("tb2")
+        let y = ib2.value
+        let result = parseInt(x)-parseInt(y)
+        document.getElementById("resultWrite").innerHTML = "Result Subtraction :" + result
+    }
+    function multiplication() {
+        let ib1 = document.getElementById("tb1")
+        let x = ib1.value
+        let ib2 = document.getElementById("tb2")
+        let y = ib2.value
+        let result = parseInt(x)*parseInt(y)
+        document.getElementById("resultWrite").innerHTML = "Result Multiplication :" + result
+    }
+    function division() {
+        let ib1 = document.getElementById("tb1")
+        let x = ib1.value
+        let ib2 = document.getElementById("tb2")
+        let y = ib2.value
+        let result = parseInt(x)/parseInt(y)
+        document.getElementById("resultWrite").innerHTML = "Result Division :" + result
+    }
+</script>
+</html>
