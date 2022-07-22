@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        form{
+            height: 410px;
+            width: 300px;
+            border: 1px black solid;
+        }
+        tr td{
+            text-align: center;
+            height: 75px;
+            width: 75px;
+        }
+        button{
+            font-size: 26px;
+            height: 60%;
+            width: 60%;
+            color: blue;
+        }
+        #displaynumber{
+            border: 1px black solid;
+            font-size: 26px;
+            color: blue;
+            text-align: right;
+            height: 82px;
+        }
+        .rowontop{
+            height: 4px;
+        }
+        .rowonbottom{
+            height: 8px;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <table>
+        <tr>
+            <td colspan="4" class="rowontop">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4" id="displaynumber">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4" class="rowonbottom">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" onclick="num(1);">1</button>
+            </td>
+            <td>
+                <button type="button" onclick="num(2);">2</button>
+            </td>
+            <td>
+                <button type="button" onclick="num(3);">3</button>
+            </td>
+            <td>
+                <button type="button" onclick="cacul('+');">+</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" onclick="num(4);">4</button>
+            </td>
+            <td>
+                <button type="button" onclick="num(5);">5</button>
+            </td>
+            <td>
+                <button type="button" onclick="num(6);">6</button>
+            </td>
+            <td>
+                <button type="button" onclick="cacul('-');">-</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" onclick="num(7);">7</button>
+            </td>
+            <td>
+                <button type="button" onclick="num(8);">8</button>
+            </td>
+            <td>
+                <button type="button" onclick="num(9);">9</button>
+            </td>
+            <td>
+                <button type="button" onclick="cacul('*');">x</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" onclick="clear_c();">C</button><!--chỉ là reset lại từ đầu hay là clear giá trị input hiện tại-->
+            </td>
+            <td>
+                <button type="button" onclick="num(0);">0</button>
+            </td>
+            <td>
+                <button type="button" onclick="equal('=');">=</button>
+            </td>
+            <td>
+                <button type="button" onclick="cacul('/');">/</button>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+<script>
+    // máy tính đơn giản
+    function num(num) {
+        let displayNum = document.getElementById("displaynumber").textContent;
+        document.getElementById("displaynumber").innerText = displayNum + num;
+    }
+    function cacul(ope) {
+        let resultNum = document.getElementById("displaynumber").textContent + ope;
+        document.getElementById('displaynumber').innerText = resultNum;
+    }
+    function equal(equal) {
+        let result = document.getElementById("displaynumber").textContent
+        document.getElementById('displaynumber').innerText = eval(result);
+    }
+    function clear_c() {
+        let result = document.getElementById("displaynumber").textContent
+        let cResult = result.slice(0,-1);
+        document.getElementById("displaynumber").innerText = cResult;
+
+    }
+    // dùng eval() và hành vi tính toán giống máy tính thực tế nhất(fail)
+    // var oldValue = '';
+    // var newValue = '';
+    // var display;
+    // function num(num) {
+    //     if(oldValue !== '' && newValue === ''){
+    //         document.getElementById("displaynumber").innerText = '';
+    //         display = document.getElementById("displaynumber").textContent;
+    //         document.getElementById("displaynumber").innerText = display + num;
+    //     }else{
+    //         display = document.getElementById("displaynumber").textContent;
+    //         document.getElementById("displaynumber").innerText = display + num;
+    //     }
+    // }
+    // function cacul(ope){
+    //     if(oldValue === ''){
+    //         oldValue = document.getElementById("displaynumber").textContent;
+    //         document.getElementById("displaynumber").textContent = '';
+    //         console.log(oldValue + ope)
+    //     }else{
+    //         newValue = document.getElementById("displaynumber").textContent;
+    //         oldValue = document.getElementById("displaynumber").innerText = eval(newValue + ope + oldValue)
+    //         console.log(oldValue + ope);
+    //         newValue = '';
+    //     }
+    // }
+    // Cách thực hiện function riêng cho từng loại phép tính
+    // function cacul() {
+        // if(oldValue == '' && newValue == ''){
+        //     oldValue = Number(document.getElementById("displaynumber").textContent);
+        //     document.getElementById("displaynumber").innerText = '';
+        //     return
+        // }
+        // if(oldValue !== '' && newValue === ''){
+        //     newValue = Number(document.getElementById("displaynumber").textContent);
+        //     document.getElementById("displaynumber").innerText = newValue + oldValue;
+        //     oldValue += newValue;
+        //     newValue = '';
+        //     return
+        // }
+        // if(oldValue !== '' && Number(document.getElementById("displaynumber").textContent) === 0  && newValue === ''){
+        //     document.getElementById("displaynumber").innerText = '';
+        //     return
+        // }
+    // }
+
+
+</script>
+</html>
