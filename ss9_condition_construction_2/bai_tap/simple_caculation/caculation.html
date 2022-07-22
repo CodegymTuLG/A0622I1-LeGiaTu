@@ -116,8 +116,7 @@
         document.getElementById("displaynumber").innerText = displayNum + num;
     }
     function cacul(ope) {
-        let resultNum = document.getElementById("displaynumber").textContent + ope;
-        document.getElementById('displaynumber').innerText = resultNum;
+        document.getElementById('displaynumber').innerText = document.getElementById("displaynumber").textContent + ope;
     }
     function equal(equal) {
         let result = document.getElementById("displaynumber").textContent
@@ -125,9 +124,7 @@
     }
     function clear_c() {
         let result = document.getElementById("displaynumber").textContent
-        let cResult = result.slice(0,-1);
-        document.getElementById("displaynumber").innerText = cResult;
-
+        document.getElementById("displaynumber").innerText = result.slice(0,-1);
     }
     // dùng eval() và hành vi tính toán giống máy tính thực tế nhất(fail)
     // var oldValue = '';

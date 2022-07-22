@@ -4,79 +4,102 @@
     <meta charset="UTF-8">
     <title>image_Quizz</title>
     <style>
-        .block1, .block2, .block3{
+        .block1, .block2, .block3 {
             height: 250px;
             width: 500px;
             margin-bottom: 20px;
             background-color: orange;
         }
-        #imageBlock1, #imageBlock2, #imageBlock3{
+
+        #imageBlock1, #imageBlock2, #imageBlock3 {
             width: 100%;
             height: 250px;
         }
     </style>
 </head>
 <body>
-<!--<button type="button" class="btnImage" onclick="changeImage1();">click</button>-->
-
 <div class="block1">
     <img id="imageBlock1" onclick="changeImage1();" src="image_template/John_Wick1.jpg">
 </div>
 <div class="block2">
-    <img id="imageBlock2" onclick="changeImage2();" src="image_template/Jason_Statham1.jpg">
+    <img id="imageBlock2" onclick="changeImage2();" src="image_template/John_Wick2.jpg">
 </div>
 <div class="block3">
-    <img id="imageBlock3" onclick="changeImage3();" src="image_template/Mohammed_Ali1.jpg">
+    <img id="imageBlock3" onclick="changeImage3();" src="image_template/John_Wick3.jpg">
 </div>
 </body>
 <script>
     var clickTop = 1;
     var clickMid = 1;
     var clickBot = 1;
-    function changeImage1(){
-    let picTop1 = 'image_template/John_Wick1.jpg'
-    let picTop2 = 'image_template/Jason_Statham1.jpg'
-    let picTop3 = 'image_template/Mohammed_Ali1.jpg'
-            if(clickTop === 1){
-                document.getElementById('imageBlock1').src = picTop1;
-            }else if(clickTop === 2){
-                document.getElementById('imageBlock1').src = picTop2;
-            }else if(clickTop === 3){
-                document.getElementById('imageBlock1').src = picTop3;
-                clickTop = 1;
-                return;
-            }
-        clickTop++;
-    }
-    function changeImage2(){
+
+    function changeImage1() {
         let picTop1 = 'image_template/John_Wick1.jpg'
         let picTop2 = 'image_template/Jason_Statham1.jpg'
         let picTop3 = 'image_template/Mohammed_Ali1.jpg'
-        if(clickMid === 1){
+        console.log('top' + clickTop)
+        if (clickTop === 1) {
             document.getElementById('imageBlock1').src = picTop1;
-        }else if(clickMid === 2){
+            clickTop++;
+        } else if (clickTop === 2) {
             document.getElementById('imageBlock1').src = picTop2;
-        }else if(clickMid === 3){
+            clickTop++;
+        } else if (clickTop === 3) {
             document.getElementById('imageBlock1').src = picTop3;
+            clickTop = 1;
+        }
+        so_sanh()
+    }
+
+    function changeImage2() {
+        let picMid1 = 'image_template/John_Wick2.jpg'
+        let picMid2 = 'image_template/Jason_Statham2.jpg'
+        let picMid3 = 'image_template/Mohammed_Ali2.jpg'
+        console.log('mid' + clickMid)
+        if (clickMid === 1) {
+            document.getElementById('imageBlock2').src = picMid1;
+            clickMid++;
+        } else if (clickMid === 2) {
+            document.getElementById('imageBlock2').src = picMid2;
+            clickMid++;
+        } else if (clickMid === 3) {
+            document.getElementById('imageBlock2').src = picMid3;
             clickMid = 1;
-            return;
         }
-        clickMid++;
+        so_sanh();
     }
-    function changeImage3(){
-        let picTop1 = 'image_template/John_Wick1.jpg'
-        let picTop2 = 'image_template/Jason_Statham1.jpg'
-        let picTop3 = 'image_template/Mohammed_Ali1.jpg'
-        if(clickBot === 1){
-            document.getElementById('imageBlock1').src = picTop1;
-        }else if(clickBot === 2){
-            document.getElementById('imageBlock1').src = picTop2;
-        }else if(clickBot === 3){
-            document.getElementById('imageBlock1').src = picTop3;
+
+    function changeImage3() {
+        let picBot1 = 'image_template/John_Wick3.jpg'
+        let picBot2 = 'image_template/Jason_Statham3.jpg'
+        let picBot3 = 'image_template/Mohammed_Ali3.jpg'
+        console.log('bot' + clickBot)
+        if (clickBot === 1) {
+            document.getElementById('imageBlock3').src = picBot1;
+            clickBot++;
+        } else if (clickBot === 2) {
+            document.getElementById('imageBlock3').src = picBot2;
+            clickBot++;
+        } else if (clickBot === 3) {
+            document.getElementById('imageBlock3').src = picBot3;
             clickBot = 1;
-            return;
         }
-        clickBot++;
+        so_sanh();
     }
+
+    function so_sanh() {
+        if (clickTop === clickMid && clickMid === clickBot) {
+            document.getElementById('imageBlock1').style.border = '5px outset red';
+            document.getElementById('imageBlock2').style.border = '5px outset red';
+            document.getElementById('imageBlock3').style.border = '5px outset red';
+        } else {
+            document.getElementById('imageBlock1').style.border = '5px outset';
+            document.getElementById('imageBlock2').style.border = '5px outset';
+            document.getElementById('imageBlock3').style.border = '5px outset';
+        }
+    }
+    so_sanh();
+
+
 </script>
 </html>

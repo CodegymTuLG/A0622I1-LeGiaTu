@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let a = Number(prompt('a.sqrt(x) + b.x + c = 0, hãy nhập số a',''))
+    let b = Number(prompt(a+'.sqrt(x) + b.x + c = 0, hãy nhập số b',''))
+    let c = Number(prompt(a+'.sqrt(x) + '+b+'.x + c = 0, hãy nhập số c',''))
+    if(a!==0){
+        if(a+b+c===0){
+        alert('phương trình ' + a + '.sqrt(x)' + ' + ' + b +'x +'+ c + '= 0, thì nghiệm của phương trình: x1 = ' + 1 + ' và x2 =' + c/a);
+        }else if(a-b+c===0){
+            alert('phương trình ' + a + '.sqrt(x)' + ' + ' + b +'x +'+ c + '= 0, thì nghiệm của phương trình: x1 = ' + -1 + ' và x2 =' + -c/a);
+        }else{
+            alert(' các giá trị a, b, c nhập vào bị sai. hãy nhập lại')
+        }
+    }else {
+        alert('phương trình vô nghiệm')
+    }
+</script>
+</html>
