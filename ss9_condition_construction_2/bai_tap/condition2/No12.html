@@ -8,10 +8,11 @@
 
 </body>
 <script>
-    let a = Number(prompt('nhập số tiền gốc ban đầu',''))
-    let b = Number(prompt('lãi xuất hàng tháng là 0,32%, hãy nhập số tháng bạn đã gửi',''))
-for(;){
-
-}
+    let P = Number(prompt('nhập số tiền gốc ban đầu',''))
+    let r = Number(prompt('lãi suất năm là bao nhiều %/năm : ',''))
+    let t =1;
+    for(;t<=10;t++){
+        alert('ở năm thứ '+ t + ' bạn sẽ nhận được số tiền là ' + P*Math.pow((1+r/100),t) + ' nếu rút')
+    }
 </script>
 </html>

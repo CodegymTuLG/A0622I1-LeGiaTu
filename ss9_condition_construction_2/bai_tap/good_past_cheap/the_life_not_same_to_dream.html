@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2> Tiêu chuẩn chọn người yêu của bạn là gì?</h2>
+<form id="ParentOp1" onchange="Option1Value()">
+    <label>1. Xinh đẹp</label>
+    <input type="radio" class="O1" name="Op1Choose" value="1">Có
+    <input type="radio" id="op1No" name="Op1Choose" value="2" checked="checked">Không
+</form>
+<form id="ParentOp2" onchange="Option2Value()">
+    <label>2. Nấu ăn ngon</label>
+    <input type="radio" class="O2" name="Op2Choose" value="1">Có
+    <input type="radio" id="op2No" name="Op2Choose" value="2" checked="checked">Không
+</form>
+<form id="ParentOp3" onchange="Option3Value()">
+    <label>3. Phụ huynh giàu</label>
+    <input type="radio" class="O3" name="Op3Choose" value="1">Có
+    <input type="radio" id="op3No" name="Op3Choose" value="2" checked="checked">Không
+</form><br>
+<button type="button" onclick="changeOp()"> Tìm kiếm </button>
+</body>
+<script>
+    const Op1 = document.forms.ParentOp1.elements["Op1Choose"];
+    var option1Value;
+    function Option1Value(){
+        console.log(`${Op1.value}`)
+        option1Value = `${Op1.value}`;
+        so_sanh();
+    }
+    const Op2 = document.forms.ParentOp2.elements["Op2Choose"];
+    var option2Value;
+    function Option2Value(){
+        console.log(`${Op2.value}`)
+        option2Value = `${Op2.value}`;
+        so_sanh();
+    }
+    const Op3 = document.forms.ParentOp3.elements["Op3Choose"];
+    var option3Value;
+    function Option3Value(){
+        console.log(`${Op3.value}`)
+        option3Value = `${Op3.value}`;
+        so_sanh();
+    }
+    function so_sanh() {
+        if (option1Value === '1' && option2Value === '1' && option3Value === '1') {
+            alert("Tỉnh lại đi ông cháu!")
+        }else{
+
+        }
+    }
+    function changeOp() {
+        if (option1Value === '1' && option2Value === '1' && option3Value === '1') {
+            document.getElementById("op1No").checked = "checked";
+            alert("Tỉnh lại đi ông cháu ơi!")
+        }else{
+
+        }
+
+    }
+
+    // function changeOption1_Y(){
+    // let a = document.getElementById("op1YesCho").value
+    // let b = document.getElementById("op1NoCho").value
+    // console.log('a ' + a)
+    // console.log('b ' + b)
+    // }
+    // function changeOption1_N(){
+    //     let a = document.getElementById("op1YesCho").value
+    //     let b = document.getElementById("op1NoCho").value
+    //     console.log('a ' + a)
+    //     console.log('b ' + b)
+    // }
+</script>
+</html>

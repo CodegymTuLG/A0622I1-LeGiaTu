@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let numbers = +prompt("số lượng số nguyên tố cần in ra","");
+    let count = 0;
+    let N = 2;
+    if(numbers <= 4){
+        switch (numbers) {
+            case 1:
+                document.write(2 + "<br>")
+                break;
+            case 2:
+                document.write(2 + "<br>")
+                document.write(3 + "<br>")
+                break;
+            case 3:
+                document.write(2 + "<br>")
+                document.write(3 + "<br>")
+                document.write(5 + "<br>")
+                break;
+            case 4:
+                document.write(2 + "<br>")
+                document.write(3 + "<br>")
+                document.write(5 + "<br>")
+                document.write(7 + "<br>")
+                break;
+        }
+    }else if(numbers > 4){
+        document.write(2 + "<br>")
+        document.write(3 + "<br>")
+        document.write(5 + "<br>")
+        document.write(7 + "<br>")
+        count = 4;
+            for(;count<numbers;N++){
+                    if(N%2 !== 0 && N%3 !==0 && N%5 !==0 && N%7 !==0) {
+                        document.write(N + "<br>")
+                        count++
+                    }
+            }
+    }
+</script>
+</html>
