@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let celsius = +prompt("hãy nhập nhiệt độ hiện tại")
+    while(celsius<20 || celsius>100){
+        if(celsius<20){
+            alert("hãy tăng nhiệt độ")
+            celsius = +prompt("hãy nhập nhiệt độ hiện tại")
+        }
+        if(celsius>100){
+            alert("hãy giảm nhiệt độ")
+            celsius = +prompt("hãy nhập nhiệt độ hiện tại")
+        }
+    }
+    alert("nhiệt độ hiện tại là: " +celsius +" độ C")
+</script>
+</html>

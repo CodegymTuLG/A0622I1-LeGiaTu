@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button type="button" onclick="gameStart();">chơi</button>
+</body>
+<script>
+    function gameStart() {
+        alert("nhập khoảng mà bạn muốn đoán")
+        let min = +prompt("nhập số nhỏ")
+        let max = +prompt("nhập số lớn")
+        let randomNum = Math.floor(Math.random() * (max - min)) + min;
+        let guessNum = +prompt("hãy đoán 1 con số trong khoảng bạn vừa nhập")
+        // if(guessNum===randomNum){
+        //     alert("bingo! bạn đã đoán trúng")
+        // }else if(guessNum>randomNum){
+        //     alert("hãy đoán số nhỏ hơn số bạn vừa đoán")
+        // }else {
+        //     alert("hãy đoán số lớn hơn số bạn vừa đoán")
+        // }
+        console.log(randomNum)
+        for(let i = 0;i<3;i++){
+            if(guessNum<randomNum){
+                guessNum = +prompt("hãy đoán số lớn hơn số bạn vừa đoán");
+            }else if(guessNum>randomNum){
+                guessNum = +prompt("hãy đoán số lớn hơn số bạn vừa đoán");
+            }else {
+                alert("bingo! bạn đã đoán trúng")
+                return;
+            }
+        }
+    }
+</script>
+</html>

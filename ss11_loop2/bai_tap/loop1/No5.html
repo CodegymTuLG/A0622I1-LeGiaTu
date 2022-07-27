@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let beginFibonacci = 1;
+    let numFibonacci = 1;
+    let sum = 0;
+    let total = 2;
+        document.write("1" + "<br>");
+        document.write("1" + "<br>");
+        for(let i=3;i<=20;i++){
+            sum = beginFibonacci + numFibonacci;
+            total +=sum;
+            beginFibonacci = numFibonacci;
+            numFibonacci = sum;
+    }
+        alert("tổng 20 số Fibonacci đầu tiên là " + total)
+</script>
+</html>

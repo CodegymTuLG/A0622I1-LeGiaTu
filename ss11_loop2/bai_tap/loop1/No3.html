@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+let beginFibonacci = 1;
+let numFibonacci = 1;
+let sum = 0;
+let num = +prompt("nhập số fibonacci mà bạn muốn hiển thị ra")
+if(num<=2){
+    switch (num) {
+        case 0:
+            alert("hãy nhập số lớn hơn 0");
+            break;
+        case 1:
+            document.write("1" + "<br>");
+            break;
+        case 2:
+            document.write("1" + "<br>");
+            document.write("1" + "<br>");
+            break;
+    }
+}else if(num>2){
+    document.write("1" + "<br>");
+    document.write("1" + "<br>");
+    for(let i=3;i<=num;i++){
+        sum = beginFibonacci + numFibonacci;
+        document.write(sum + "<br>");
+        beginFibonacci = numFibonacci;
+        numFibonacci = sum;
+    }
+}
+</script>
+</html>
