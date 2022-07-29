@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arr_num = [-1,4,5,-12,-23,2,-3,42,3,2]
+    let numInput = +prompt("input V")
+    let number = 0
+    console.log("old " +arr_num);
+    for(let i = 0; i < arr_num.length; i++) {
+        if (arr_num[i] === numInput) {
+            number = i;
+        }
+    }
+    for(let i = number; i < arr_num.length; i++){
+        arr_num[i] = arr_num[i+1]
+    }
+    arr_num[arr_num.length-1] = 0;
+    console.log("new "+arr_num);
+</script>
+</html>

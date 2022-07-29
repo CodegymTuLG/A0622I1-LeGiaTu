@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let text_string = prompt("nhập vào 1 chuỗi ký tự").toString();
+    let arr_text = [""];
+    let text_convent = "";
+    for(let i = 0;i<text_string.length;i++){
+        arr_text[i] = text_string.charAt(i);
+    }
+    for(let i = 0;i<arr_text.length;i++){
+        if(arr_text[i] === "-"){
+            arr_text[i] = "_"
+        }
+        text_convent += arr_text[i];
+    }
+    console.log(text_string)
+    console.log(text_convent)
+</script>
+</html>

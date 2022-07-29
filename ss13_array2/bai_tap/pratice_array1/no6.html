@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arr_num = [-1,4,5,-12,-23,2,-3,42,3,2]
+    let numInput = +prompt("input V")
+    console.log(arr_num);
+    let true_flag = false;
+    for(let i=0; i < arr_num.length; i++) {
+        if (arr_num[i] === numInput) {
+            true_flag = true;
+        }
+    }
+    if(true_flag){
+        alert("V is in the array")
+    }else{
+        alert("V is not in the array")
+    }
+</script>
+</html>

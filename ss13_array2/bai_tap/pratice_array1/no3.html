@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arr_num = [1,4,5,12,23,2,3,42,3,2]
+    let max = arr_num[0]
+    let sum = 0;
+    console.log(arr_num);
+    for(let i=0; i < arr_num.length; i++){
+        if(arr_num[i]>max){
+            max = arr_num[i]
+        }
+    }
+    for(let i=0; i < arr_num.length; i++){
+        sum += arr_num[i]
+    }
+    let avg =sum/arr_num.length
+    console.log(max)
+    console.log("avg "+ avg)
+</script>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // let arr_num = [1,-4,5,-12,-23,2,-3,42,3,2]
+    // let arr_num_new = [];
+    // let min = arr_num[0];
+    // let max = arr_num[0];
+    // for(let i=0; i < arr_num.length; i++){
+    //     if(arr_num[i]>max){
+    //         max = arr_num[i]
+    //     }
+    // }
+    // for(let j = 0;j < arr_num.length; j++){
+    //     let a = 0;
+    //     let b = 0;
+    //     let number = 0;
+    //     for(; a < arr_num.length; a++){
+    //         if(arr_num[a]<min){
+    //             min = arr_num[a]
+    //         }
+    //     }
+    //     for(; b < arr_num.length; b++) {
+    //         if (arr_num[b] === min) {
+    //             number = b;
+    //         }
+    //     }
+    //     arr_num[number] = max;
+    //     arr_num_new[arr_num_new.length] = min
+    //     min = arr_num[0];
+    // }
+    // console.log('old ' +arr_num);
+    // console.log('new '+arr_num_new)
+
+    let arr_num = [1,-4,5,-12,-23,2,-3,42,3,2]
+    let arr_num_new = [];
+    let min = arr_num[0];
+    let max = arr_num[0];
+    for(let i = 0; i < arr_num.length; i++){
+        if(arr_num[i]<min){
+            min = arr_num[i]
+        }
+    }
+    for(let j = 0;j < arr_num.length; j++){
+        let number = 0;
+        for(let i=0; i < arr_num.length; i++){
+            if(arr_num[i]>max){
+                max = arr_num[i]
+            }
+        }
+        for(let i = 0; i < arr_num.length; i++) {
+            if (arr_num[i] === max) {
+                number = i;
+            }
+        }
+        arr_num[number] = min;
+        arr_num_new[arr_num_new.length] = max
+        max = arr_num[0];
+    }
+    arr_num = [1,-4,5,-12,-23,2,-3,42,3,2]
+    console.log('old ' +arr_num);
+    console.log('new '+arr_num_new)
+</script>
+</html>

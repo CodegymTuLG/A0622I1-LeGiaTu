@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arr_num = [1,4,5,12,23,2,3,42,3,2]
+    let max = arr_num[0]
+    let count = 0;
+    console.log(arr_num);
+    for(let i=0; i < arr_num.length; i++){
+        if(arr_num[i]>max){
+            max = arr_num[i]
+        }
+    }
+    for(let i=0; i < arr_num.length; i++){
+        if(arr_num[i]===max){
+            i++;
+            console.log("vị trí thứ " + i );
+            break;
+        }
+    }
+    console.log(max)
+</script>
+</html>

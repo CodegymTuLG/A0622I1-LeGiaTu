@@ -9,11 +9,12 @@
 </body>
 <script>
     let total = 0
-    for(let i=7;i<=30*7;i += 7){
+    let n = +prompt("nhập số")
+    for(let i=7;i<n*7;i += 7){
         if(i%7===0){
             total += i;
         }
     }
-    alert("tổng 30 số tự nhiên đầu tiên chi hết cho 7 là " + total)
+    alert("tổng " + n + " số tự nhiên đầu tiên chi hết cho 7 là " + total)
 </script>
 </html>
