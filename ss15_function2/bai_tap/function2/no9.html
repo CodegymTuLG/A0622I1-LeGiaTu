@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let a = [];
+    let arrString = prompt("enter a string");
+    let digit = prompt("enter a digit you want to check");
+    findDigitOnString();
+    function findDigitOnString() {
+        let count = 0;
+        for(let i = 0;i < arrString.length; i++ ) {
+            a[i] = arrString.charAt(i);
+        }
+        for(let i = 0;i < a.length; i++ ){
+            if(a[i] == digit){
+                count++
+            }
+        }
+        console.log(a);
+        if(count == 0){
+            return console.log("-1");
+        }
+        return console.log(count);
+    }
+
+
+
+</script>
+</html>

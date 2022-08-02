@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let findName = prompt("");
+    let result = searchStar();
+    function searchStar() {
+        let starName = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe" ,"Regulus"];
+        let constellationName = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major" ,"Leo"];
+        for(let i = 0; i < starName.length; i++){
+            if(starName[i]==findName){
+                return alert(" constellation of star is: "+ constellationName[i]);
+            }
+        }
+        return alert("We don't understand!");
+    }
+</script>
+</html>

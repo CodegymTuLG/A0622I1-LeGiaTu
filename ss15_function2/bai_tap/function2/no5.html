@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let num1 = +prompt("enter the first number");
+    let num2 = +prompt("enter the second number");
+    let num3 = +prompt("enter the third number");
+    findMin();
+    function findMin() {
+        let min = num1;
+        if(num2 < min){
+            min = num2;
+            if(num3 < min){
+                min = num3;
+            }
+        }
+        return alert(min)
+    }
+</script>
+</html>

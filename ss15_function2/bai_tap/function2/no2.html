@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" id="inputNum"">
+<button type="button" onclick="area_of_circle();">AREA</button>
+<button type="button" onclick="circumference_of_circle();">CIRCUMFERENCE</button>
+<p id="result">Result: </p>
+</body>
+<script>
+    function area_of_circle() {
+        let r = document.getElementById("inputNum").value;
+        document.getElementById("result").innerText = "AREA OF CIRCLE IS:  "+ Math.round(r*r*Math.PI*100)/100 + " cm2";
+    }
+    function circumference_of_circle() {
+        let r = document.getElementById("inputNum").value;
+        document.getElementById("result").innerText = "CIRCUMFERENCE OF CIRCLE IS:  "+ Math.round(2*r*Math.PI*100)/100 + " cm";
+    }
+</script>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" id="num1">
+<button type="button" onclick="callPlusOne();">Plus one</button>
+<p id="result"></p>
+</body>
+<script>
+    function callPlusOne(num) {
+        let intiNum = parseInt(document.getElementById("num1").value);
+        document.getElementById("result").innerText = intiNum + 1;
+    }
+</script>
+</html>

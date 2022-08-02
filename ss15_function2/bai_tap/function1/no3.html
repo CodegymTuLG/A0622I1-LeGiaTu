@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" id="num1">
+<input type="number" id="num2">
+<button type="button" onclick="callFunction();">Plus one</button>
+<p id="result"></p>
+</body>
+<script>
+    function callFunction(num) {
+        let num1 = parseInt(document.getElementById("num1").value);
+        let num2 = parseInt(document.getElementById("num2").value);
+        if(num1>num2){
+            alert("num1 lớn hơn num2")
+        }else {
+            document.getElementById("result").innerText = num1 + num2;
+        }
+    }
+</script>
+</html>
