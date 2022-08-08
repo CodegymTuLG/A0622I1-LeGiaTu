@@ -5,40 +5,94 @@
     <title>Title</title>
 </head>
 <body>
-<h3>Caro Game Simple</h3>
-<p id="carogame" />
-<input type="button" value="Change Value" onclick="changeValue()">
+<h3>Caro Game</h3>
+<p id="show"></p>
+
 </body>
 <script>
-    let b = document.getElementById("carogame");
-    let board = [];
-    let data = "";
-    for (let i = 0; i < 5; i++) {
-        board[i] = new Array('.','.','.','.','.');
-    }
-
-    for (let i = 0; i < 5; i++) {
-        data += "<br/>";
-        for (let j = 0; j < 5; j++) {
-            data += board[i][j] + "&nbsp;&nbsp;";
+    let size = +prompt("enter size caro game you want to play!!!");
+    size += 5;
+    let arr = new Array(size)
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = new Array(size)
+        for (let j = 0; j < arr.length; j++) {
+            arr[i][j] = '';
         }
     }
+    showTable();
+    function showTable(){
+        let createTable = '<table border="1">';
+        for (let i = 0; i < arr.length-5; i++) {
+            createTable += '</tr>';
+            for (let j = 0; j < arr.length-5; j++) {
+                createTable += '<td onclick="play1(' + i + ',' + j + ');" style="width: 25px;height: 25px;">'+ arr[i][j] +'</td>';
+            }
+            createTable += '</tr>';
+        }
+        createTable += '</table>';
+        document.getElementById("show").innerHTML = createTable;
+    }
+    let isYourTurn = true;
+    function play1(i,j) {
 
-    data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>"
-    b.innerHTML = data;
-    function changeValue() {
-        let positionX = prompt("X: ");
-        let positionY = prompt("Y: ");
-        data = "";
-        board[positionX][positionY] = "x";
-        for (let i = 0; i < 5; i++) {
-            data += "<br/>";
-            for (let j = 0; j < 5; j++) {
-                data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+        if(isYourTurn){
+            if(isValue(i,j)=='O'){
+                alert("This box is already checked, please check another box");
+                return;
+            }
+            arr[i][j] = "X";
+            isYourTurn = false;
+            if(checkWin(i,j)){
+                alert("X player is winner!");
+            }
+        }else {
+            if(isValue(i,j)=='X'){
+                alert("This box is already checked, please check another box");
+                return;
+            }
+            arr[i][j] = "O";
+            isYourTurn = true;
+            if(checkWin(i,j)){
+                alert("O player is winner!");
             }
         }
-        data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>"
-        b.innerHTML = "<hr/>" + data;
+        showTable();
+    }
+    function isValue(i,j){
+        if(arr[i][j]!=''){
+            return arr[i][j];
+        }else {
+            return arr[i][j];
+        }
+    }
+    function checkWin() {
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length; j++) {
+                if(isValue(i,j)=='X'){
+                    if(arr[i+1][j]=='X' && arr[i+2][j]=='X' && arr[i+3][j]=='X'){
+                        return true;
+                    }else if(arr[i][j+1]=='X' && arr[i][j+2]=='X' && arr[i][j+3]=='X'){
+                        return true;
+                    }else if(arr[i+1][j+1]=='X' && arr[i+2][j+2]=='X' && arr[i+3][j+3]=='X'){
+                        return true;
+                    }else if(arr[i-1][j+1]=='X' && arr[i-2][j+2]=='X' && arr[i-3][j+3]=='X'){
+                        return true;
+                    }
+                }
+                if(isValue(i,j)=='O'){
+                    if(arr[i+1][j]=='O' && arr[i+2][j]=='O' && arr[i+3][j]=='O'){
+                        return true;
+                    }else if(arr[i][j+1]=='O' && arr[i][j+2]=='O' && arr[i][j+3]=='O'){
+                        return true;
+                    }else if(arr[i+1][j+1]=='O' && arr[i+2][j+2]=='O' && arr[i+3][j+3]=='O'){
+                        return true;
+                    }else if(arr[i-1][j+1]=='O' && arr[i-2][j+2]=='O' && arr[i-3][j+3]=='O'){
+                        return true;
+                    }
+                }
+            }
+        }
+
     }
 </script>
 </html>

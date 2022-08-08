@@ -8,22 +8,19 @@
 
 </body>
 <script>
-    let a = +prompt("");
-    isPrime();
-        function isPrime(number){
-            let result = "";
+    function isPrime(number){
             let isPrime = true;
-            for(let i = 2; i < a; i++){
-                if(a%i===0){
+            for(let i = 2; i < number; i++){
+                if(number%i===0){
                     isPrime = false;
                 }
             }
-            if(isPrime){
-                result = console.log("is prime")
-            }else {
-                result = console.log("is not prime")
-            }
-            return result
+            return isPrime;
+        }
+    for (let i = 3; i < 10000; i++) {
+        if(isPrime(i)){
+            console.log(i)
+        }
     }
 
 

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Add New Product</h2>
+<input type="text" id="new_product">
+<button type="button" onclick="addNew();">Add</button><br><br>
+<h2>Display All Product</h2>
+<h4>Product Name</h4>
+<p id="showValue"></p>
+<p id="showForm"></p>
+</body>
+<script>
+
+    let arr = ['iPhone 13 Pro Max 128GB','iPhone 12 128GB','OPPO A95','Xiaomi 11T 5G 128GB','Vivo V23e','OPPO A16K','Xiaomi Redmi 10 (4GB/64GB)'];
+    showTable();
+    function showTable(){
+        let createTable = '<table border="1px">';
+        for (let i = 0; i < arr.length; i++) {
+            createTable += '</tr>';
+            createTable += '<td style="width: 300px;height: 25px;">'+ arr[i] +'</td>'
+            createTable += '<td style="width: 20px;height: 25px;"><button type="button" onclick="showEditForm('+i+');">Edit</button></td>';
+            createTable += '<td style="width: 20px;height: 25px;"><button type="button" onclick="deleteFunc('+i+');">Delete</button></td>';
+            createTable += '</tr>';
+        }
+        createTable += '</table>';
+        document.getElementById("showValue").innerHTML = createTable;
+    }
+    function addNew() {
+        let valueAdd = document.getElementById("new_product").value;
+        arr.push(valueAdd);
+        showTable();
+    }
+    function showEditForm(i) {
+        showTable();
+        document.getElementById('showForm').innerHTML = '<form><input type="text" id="valueEdit" value="'+arr[i]+'"><button type="button" onclick="editfunc('+i+');">Edit</button></form>';
+    }
+    function editfunc(i) {
+        arr[i] = document.getElementById('valueEdit').value;
+        showTable();
+        document.getElementById('showForm').innerHTML = '';
+    }
+    function deleteFunc(i) {
+        arr.splice(i,1)
+        showTable();
+    }
+</script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let str = prompt("i will check your input string is Palindrome or not",'')
+    let arrStr = [];
+    for (let i = 0; i < str.length; i++) {
+        arrStr[i] = str.charAt(i);
+    }
+    console.log(arrStr)
+    isPalindrome();
+    function isPalindrome() {
+        for (let i = 0; i < arrStr.length/2; i++) {
+            if(arrStr[i]!==arrStr[arrStr.length-i-1]){
+                return false;
+            }
+        }
+        return true;
+    }
+    if(isPalindrome()){
+        alert('is Palindrome');
+    }else {
+        alert('is not Palindrome');
+    }
+
+</script>
+</html>
