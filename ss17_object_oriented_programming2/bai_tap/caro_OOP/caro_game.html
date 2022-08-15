@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Caro Game</h3>
+<p id="show"></p>
+
+</body>
+<script>
+
+    let absolute = false;
+    let position = []
+    for (let i = 0; i < position.length; i++) {
+        position[i] = []
+        for (let j = 0; j < position[i].length; j++) {
+            position[i][j] = '';
+        }
+    }
+    console.log(position)
+
+    class Cell {
+        constructor(position, absolute) {
+            this.position = position;
+            this.absolute = absolute;
+        }
+
+        setPosition(left, top) {
+            this.position = position[5][4];
+        }
+        getPosition(){
+            return this.position;
+        }
+    }
+    let cell = new Cell(position, absolute)
+    let size = 20;
+    size += 5;
+    let arr = new Array(size)
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = new Array(size)
+        for (let j = 0; j < arr.length; j++) {
+            arr[i][j] = '';
+        }
+    }
+    showTable();
+
+    function showTable() {
+        let createTable = '<table border="1">';
+        for (let i = 0; i < arr.length - 5; i++) {
+            createTable += '</tr>';
+            for (let j = 0; j < arr.length - 5; j++) {
+                createTable += '<td onclick="play1(' + i + ',' + j + ');" style="width: 25px;height: 25px;">' + arr[i][j] + '</td>';
+            }
+            createTable += '</tr>';
+        }
+        createTable += '</table>';
+        document.getElementById("show").innerHTML = createTable;
+    }
+    let isHaveWinner = false;
+    let isYourTurn = true;
+    function play1(i, j) {
+        if (!isHaveWinner) {
+            if (isYourTurn) {
+                if (isValue(i, j) == 'O') {
+                    alert("This box is already checked, please check another box");
+                    return;
+                }
+                arr[i][j] = "X";
+                console.log(cell.getPosition())
+                isYourTurn = false;
+                if (checkWin(i, j)) {
+                    alert("X player is winner!");
+                    return isHaveWinner = true;
+                }
+            } else {
+                if (isValue(i, j) == 'X') {
+                    alert("This box is already checked, please check another box");
+                    return;
+                }
+                arr[i][j] = "O";
+                isYourTurn = true;
+                if (checkWin(i, j)) {
+                    alert("O player is winner!");
+                    return isHaveWinner = true;
+                }
+            }
+
+        }
+        showTable();
+    }
+
+    function isValue(i, j) {
+        if (arr[i][j] != '') {
+            return arr[i][j];
+        } else {
+            return arr[i][j];
+        }
+    }
+
+    function checkWin() {
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length; j++) {
+                if (isValue(i, j) == 'X') {
+                    if (arr[i + 1][j] == 'X' && arr[i + 2][j] == 'X' && arr[i + 3][j] == 'X' && arr[i + 4][j] == 'X') {
+                        return true;
+                    } else if (arr[i][j + 1] == 'X' && arr[i][j + 2] == 'X' && arr[i][j + 3] == 'X' && arr[i][j + 4] == 'X') {
+                        return true;
+                    } else if (arr[i + 1][j + 1] == 'X' && arr[i + 2][j + 2] == 'X' && arr[i + 3][j + 3] == 'X' && arr[i + 4][j + 4] == 'X') {
+                        return true;
+                    } else if (arr[i - 1][j + 1] == 'X' && arr[i - 2][j + 2] == 'X' && arr[i - 3][j + 3] == 'X' && arr[i - 4][j + 4] == 'X') {
+                        return true;
+                    }
+                }
+                if (isValue(i, j) == 'O') {
+                    if (arr[i + 1][j] == 'O' && arr[i + 2][j] == 'O' && arr[i + 3][j] == 'O' && arr[i + 4][j] == 'O') {
+                        return true;
+                    } else if (arr[i][j + 1] == 'O' && arr[i][j + 2] == 'O' && arr[i][j + 3] == 'O' && arr[i][j + 4] == 'O') {
+                        return true;
+                    } else if (arr[i + 1][j + 1] == 'O' && arr[i + 2][j + 2] == 'O' && arr[i + 3][j + 3] == 'O' && arr[i + 4][j + 4] == 'O') {
+                        return true;
+                    } else if (arr[i - 1][j + 1] == 'O' && arr[i - 2][j + 2] == 'O' && arr[i - 3][j + 3] == 'O' && arr[i - 4][j + 4] == 'O') {
+                        return true;
+                    }
+                }
+            }
+        }
+
+    }
+</script>
+</html>

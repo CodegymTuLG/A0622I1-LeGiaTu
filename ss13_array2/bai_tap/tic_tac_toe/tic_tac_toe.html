@@ -32,6 +32,7 @@
         createTable += '</table>';
         document.getElementById("show").innerHTML = createTable;
     }
+    let isHaveWinner = false;
     let isYourTurn = true;
     function play1(i,j) {
 
@@ -44,6 +45,7 @@
             isYourTurn = false;
             if(checkWin(i,j)){
                 alert("X player is winner!");
+                isHaveWinner = true;
             }
         }else {
             if(isValue(i,j)=='X'){
@@ -54,6 +56,7 @@
             isYourTurn = true;
             if(checkWin(i,j)){
                 alert("O player is winner!");
+                isHaveWinner = true;
             }
         }
         showTable();

@@ -9,12 +9,9 @@
 </body>
 <script>
     let digit = prompt(" enter a digit: ");
-    let result = isNum();
+    let result = alert(isNum());
     function isNum() {
-        if(Number(digit) == digit){
-            return alert("true")
-        }
-        return alert("false")
+        return parseInt(digit) == digit;
     }
 </script>
 </html>

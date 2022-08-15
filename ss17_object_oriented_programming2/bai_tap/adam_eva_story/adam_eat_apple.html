@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Adam information</h1>
+<label>Name: </label><br>
+<input type="text" id="name" style="width: 100px"><br><br>
+<label>Gender:</label><br>
+<select id="gender">
+    <option value="1">male</option>
+    <option value="2">female</option>
+</select><br><br>
+<label>Weight:</label><br>
+<input type="number" id="weight" style="width: 50px"><label> kg</label><br><br>
+<button type="button" onclick="fill();">Submit</button>
+<h1>Adam do</h1>
+<input type="text" id="input" style="width: 210px"><br><br>
+<button type="button" onclick="eatApple();">Eat</button>
+<button type="button" onclick="saySomething();">Say</button>
+<button type="button" onclick="checkAppleWeight();">Check Apple Weight</button>
+<br><br>
+<button type="button" onclick="showHuman();">Human information</button>
+</body>
+<script>
+    class Apple {
+        constructor(weight) {
+            this.weight = weight;
+        }
+
+        decrease() {
+            this.weight--;
+        }
+
+        isEmpty() {
+            return this.weight == 0;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+    }
+
+    class Human {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+
+        isMale() {
+            let gender = document.getElementById('gender');
+            let value = gender.options[gender.selectedIndex].text;
+            if (value == 'male') {
+                return true
+            } else if (value = 'female') {
+                return false
+            }
+        }
+
+        setGender(boolean) {
+            this.gender = boolean;
+        }
+
+        checkApple(Apple) {
+            return apple.getWeight(Apple) > 0;
+        }
+
+        eat(Apple) {
+            this.weight += Apple;
+        }
+
+        say(String) {
+            console.log(this.name + ' said ' + String);
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setName(String) {
+            this.name = String;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        setWeight(int) {
+            this.weight = int;
+        }
+    }
+
+    let name;
+    let gender;
+    let weight;
+    let human = new Human(name, gender, weight);
+    let apple = new Apple(10);
+
+    function fill() {
+        name = document.getElementById("name").value;
+        human.setName(name)
+        weight = parseInt(document.getElementById("weight").value);
+        human.setWeight(weight)
+        if (human.setGender(human.isMale())) {
+            gender = 'male'
+        } else if (!human.setGender(human.isMale())) {
+            gender = 'female'
+        }
+    }
+
+    function saySomething(String) {
+        String = document.getElementById('input').value;
+        document.getElementById('input').innerText = '';
+        human.say(String);
+    }
+
+    function eatApple() {
+        if (apple.getWeight()) {
+            apple.decrease();
+            human.eat(1);
+            console.log(human.getName() + ' ate a peace of apple')
+        } else {
+            console.log('Cant eat any more');
+        }
+    }
+
+    function showHuman() {
+        let gender;
+        if (human.isMale()) {
+            gender = 'male'
+        } else {
+            gender = 'female'
+        }
+        console.log(human.getName() + ' is ' + gender + ' and have weight ' + human.getWeight() + ' kg');
+    }
+
+    function checkAppleWeight() {
+        if (human.checkApple(apple.getWeight())) {
+            console.log('Apple weight ' + apple.getWeight());
+        } else if (apple.isEmpty()) {
+            console.log('The apple has been eaten!');
+        }
+    }
+
+</script>
+</html>

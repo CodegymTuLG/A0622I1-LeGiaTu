@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="5000" height="5000"></canvas>
+</body>
+<script>
+    class Rectangle {
+        constructor(long, width) {
+            this.long = long;
+            this.width = width;
+        }
+
+        CaculArea(long, width){
+            return long*width;
+        }
+        CaculPerimeter(long, width){
+            return (long+width)*2;
+        }
+    }
+
+    let long = 300;
+    let width = 200;
+    let rectangle = new Rectangle(long, width);
+    let canvas = document.getElementById("myCanvas");
+    if (canvas.getContext)
+    {
+        var ctx = canvas.getContext('2d');
+        ctx.fillStyle='black';
+        ctx.fillRect(10, 40, long, width);
+    }
+    console.log(rectangle.CaculArea(long, width));
+    console.log(rectangle.CaculPerimeter(long, width));
+</script>
+</html>

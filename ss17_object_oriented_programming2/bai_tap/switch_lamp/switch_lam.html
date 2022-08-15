@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p id="lampImage"></p>
+<button type="button" onclick="switchLamp();">Switch</button>
+<button type="button" onclick="connectLamp();">Connect</button>
+<button type="button" onclick="disconnectLamp();">Disconnect</button>
+</body>
+<script>
+    let showLampOn = '<img src="lamp_on.png">';
+    let showLampOff = '<img src="lamp_off.jpg">';
+
+    class SwitchButton {
+        constructor(status, lamp) {
+            this.status = status;
+            this.lamp = lamp;
+        }
+
+        connectToLamp(ElectricLamp) {
+            this.lamp = ElectricLamp;
+        }
+
+        switchOff() {
+            document.getElementById('lampImage').innerHTML = '';
+            document.getElementById('lampImage').innerHTML = showLampOff;
+            lamp.switchOff();
+            this.status = false;
+        }
+
+        switchOn() {
+            document.getElementById('lampImage').innerHTML = '';
+            document.getElementById('lampImage').innerHTML = showLampOn;
+            lamp.switchOn();
+            this.status = true;
+        }
+    }
+
+    class ElectricLamp {
+        constructor(status) {
+            this.status = status;
+        }
+
+        getStatus() {
+            return this.status;
+        }
+
+        switchOff() {
+            this.status = false;
+        }
+
+        switchOn() {
+            this.status = true;
+        }
+    }
+
+    let lamp = new ElectricLamp(status)
+    let switchButton = new SwitchButton(lamp.status, ElectricLamp)
+
+    function connectLamp() {
+        switchButton.connectToLamp(lamp);
+        if (lamp.getStatus()) {
+            switchButton.switchOn();
+        } else {
+            switchButton.switchOff();
+        }
+        console.log('connected')
+    }
+
+    function disconnectLamp() {
+        switchButton.connectToLamp();
+        console.log('disconnected')
+    }
+
+    function switchLamp() {
+        if (switchButton.lamp == lamp) {
+            if (lamp.getStatus()) {
+                switchButton.switchOff();
+            } else if (!lamp.getStatus()) {
+                switchButton.switchOn();
+            }
+        }
+        console.log(lamp.getStatus())
+    }
+</script>
+</html>

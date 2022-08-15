@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Objects</title>
+</head>
+<body>
+<div id="game"></div>
+<script>
+    /**
+     * Created by nhatnk on 4/26/17.
+     */
+    class Hero {
+        constructor(image, top, left, size) {
+            this.image = image;
+            this.top = top;
+            this.left = left;
+            this.size = size;
+        }
+
+        getHeroElement() {
+            return '<img width="' + this.size + '"' +
+                ' height="' + this.size + '"' +
+                ' src="' + this.image + '"' +
+                ' style="top: ' + this.top + 'px; left:' + this.left + 'px;position:absolute;" />';
+        }
+        MoveRight = function () {
+            this.left += 5;
+        }
+        MoveTop =  function() {
+            this.top += 5;
+        }
+        MoveLeft = function () {
+            this.left -= 5;
+        }
+        MoveBottom = function () {
+            this.top -= 5;
+        }
+    }
+    var hero = new Hero('ball.png', 20, 30, 200);
+    function start() {
+        let speed = 1;
+        function move() {
+            if (hero.left < window.innerWidth - hero.size  && hero.left > 0 && hero.top < 500 && hero.top <= 20) {
+                hero.MoveRight();
+            } else if (hero.left >= window.innerWidth - hero.size && hero.top < 500 && hero.left > 0) {
+                hero.MoveTop();
+            } else if ( hero.left > 0 && hero.top >= 500 && hero.left > 0) {
+                hero.MoveLeft();
+            } else if(hero.left <= 0 && hero.top <= 500  && hero.top > 0) {
+                hero.MoveBottom();
+            }else {
+                hero.MoveRight();
+            }
+        }
+        if(hero.left){
+            move();
+        }else{
+            move();
+        }
+        console.log(hero.left, hero.top)
+        document.getElementById('game').innerHTML = hero.getHeroElement();
+        setTimeout(start, speed)
+
+    }
+    start();
+</script>
+</body>
+</html>
